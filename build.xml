@@ -50,4 +50,9 @@
     nbproject/build-impl.xml and nbproject/jfx-impl.xml.
 
     -->
+    <target name="-post-compile"> 
+        <copy todir="${dist.dir}/browser_java">
+            <fileset dir="browser_java" includes="**" />
+        </copy>    
+    </target> 
 </project>

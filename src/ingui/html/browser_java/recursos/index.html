@@ -12,12 +12,19 @@ and open the template in the editor.
     </head>
     <body>
         <h3>Formulario de examen</h3>
+        <div><img height="50" width="50" src="file://${browser_java_ruta}/browser_java/ingui/html/browser_java/recursos/icono_web_carpeta.png"></div>
         <form action="http://browser_java/index" method="get">
             <label>¿GET y POST son métodos válidos de envío de formularios?</label><br>
-            <input type="radio" name ="respuesta_1" value="0"/>Falso<br/>
-            <input type="radio" name ="respuesta_1" value="1"/>Verdad<br/>
-            <input type="hidden" name="solucion_1" value="1"/>
+            <input type="radio" name ="radio_pregunta_1" value="0"/>Falso<br/>
+            <input type="radio" name ="radio_pregunta_1" value="1"/>Verdad<br/>
+            <input type="hidden" name="radio_solucion_1" value="1"/>
+            <label>¿Que es el WebView de JavaFX?</label><br>
+            <input type="checkbox" name ="checkbox_pregunta_1_1" value="-0.5"/>Un programa de eFectos Xpeciales del cine<br/>
+            <input type="checkbox" name ="checkbox_pregunta_1_2" value="-0.5"/>Una clase que crea un sitio Web<br/>
+            <input type="checkbox" name ="checkbox_pregunta_1_3" value="-0.5"/>Un comando del intérprete Java para los eFectos Xpeciales<br/>
+            <input type="checkbox" name ="checkbox_pregunta_1_4" value="1"/>Una clase de las librerías JavaFX que permite visualizar código HTML como en un navegador Web.<br/>
             <button name="enviar">Enviar</button>
+            <input type="hidden" name="preguntas_num" value="10"/>
         </form>
     </body>
 </html>
