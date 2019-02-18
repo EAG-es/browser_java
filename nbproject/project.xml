@@ -19,7 +19,7 @@
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
-                <root id="test.assets.dir"/>
+                <root id="test.browser_java.dir"/>
             </test-roots>
         </data>
     </configuration>

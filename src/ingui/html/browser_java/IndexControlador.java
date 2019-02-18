@@ -37,43 +37,81 @@ public class IndexControlador {
                 preguntas_num = Integer.valueOf(preguntas_num_texto);
             }
             int i = 1;
+//            while (true) {
+//                respuesta = query_mapa.get("radio_pregunta_" + i);
+//                if (preguntas_num == -1) {
+//                    if (respuesta == null) {
+//                        break;
+//                    }
+//                } else {
+//                    if (i > preguntas_num) {
+//                        break;
+//                    }
+//                }
+//                if (respuesta != null) {
+//                    solucion = query_mapa.get("radio_solucion_" + i);
+//                    if (solucion != null) {
+//                        if (respuesta.equals(solucion)) {
+//                            punto = punto + 1;
+//                        } else {
+//                            punto = punto - 0.5;
+//                        }
+//                    }
+//                }
+//                i = i + 1;
+//            }
+//            i = 1;
+            int j = 1;
+            boolean sin_respuesta;
+//            while (true) {
+//                sin_respuesta = true;
+//                while (true) {
+//                    if (j > 4) {
+//                        break;
+//                    }
+//                    respuesta = query_mapa.get("checkbox_pregunta_" + i + "_" + j);
+//                    if (respuesta != null) {
+//                        punto = punto + Double.valueOf(respuesta);
+//                        sin_respuesta = false;
+//                    } 
+//                    j = j + 1;
+//                }
+//                if (preguntas_num == -1) {
+//                    if (sin_respuesta) {
+//                        break;
+//                    }
+//                } else {
+//                    if (i > preguntas_num) {
+//                        break;
+//                    }
+//                }
+//                j = 1;
+//                i = i + 1;
+//            }
+            i = 1;
+            j = 1;
             while (true) {
-                respuesta = query_mapa.get("radio_pregunta_" + i);
-                if (preguntas_num == -1) {
-                    if (respuesta == null) {
+                sin_respuesta = true;
+                while (true) {
+                    if (j > 2) {
                         break;
                     }
-                } else {
-                    if (i > preguntas_num) {
-                        break;
-                    }
-                }
-                if (respuesta != null) {
-                    solucion = query_mapa.get("radio_solucion_" + i);
-                    if (solucion != null) {
-                        if (respuesta.equals(solucion)) {
+                    respuesta = query_mapa.get("input_pregunta_" + i + "_" + j);
+                    if (respuesta != null) {
+                        respuesta = respuesta.trim();
+                        respuesta = respuesta.replaceAll("\\s\\s+", " ");
+                        respuesta = respuesta.toLowerCase();
+                        solucion = query_mapa.get("input_solucion_" + i + "_" + j);
+                        solucion = solucion.trim();
+                        solucion = solucion.replaceAll("\\s+", " ");
+                        solucion = solucion.toLowerCase();
+                        if (solucion.equals(respuesta)) {
                             punto = punto + 1;
                         } else {
                             punto = punto - 0.5;
                         }
-                    }
-                }
-                i = i + 1;
-            }
-            i = 1;
-            int j = 1;
-            boolean sin_respuesta;
-            while (true) {
-                sin_respuesta = true;
-                while (true) {
-                    respuesta = query_mapa.get("checkbox_pregunta_" + i + "_" + j);
-                    if (j > 4) {
-                        break;
-                    }
-                    if (respuesta != null) {
-                        punto = punto + Double.valueOf(respuesta);
                         sin_respuesta = false;
-                    } 
+                    }
                     j = j + 1;
                 }
                 if (preguntas_num == -1) {
