@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URI;
 import java.net.URL;
 
 /**
@@ -88,7 +89,8 @@ public class Archivos {
                 }
                 file = new File(path);
             }
-            resultado = file.getAbsolutePath();
+            URI uri = file.toURI();
+            resultado = uri.getPath(); // file.getAbsolutePath();
         } catch (Exception e) {
             error[0] = e.getMessage();
             if (error[0] == null) {
