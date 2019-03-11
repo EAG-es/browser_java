@@ -102,25 +102,25 @@ public class Archivos {
         return resultado;
     }
     
-    public static String aumentar_ruta(String ruta, String nombre, String [] error)
-    {
-        String resultado = null;
-        File file;
-        if (ruta != null) {
-            if (ruta.endsWith("/")) {
-                if (nombre.startsWith("/")) {
-                    nombre = nombre.substring(1);
-                }
-                ruta = ruta + nombre;
-            } else {
-                if (nombre.startsWith("/") == false) {
-                    nombre = "/" + nombre;
-                }
-                ruta = ruta + nombre;
-            }
-            file = new File(ruta);
-            resultado = file.getAbsolutePath();
-        }
-        return resultado;
-    }      
+//    public static String aumentar_ruta(String ruta, String nombre, String [] error)
+//    {
+//        String resultado = null;
+//        File file;
+//        if (ruta != null) {
+//            if (ruta.endsWith("/")) {
+//                if (nombre.startsWith("/")) {
+//                    nombre = nombre.substring(1);
+//                }
+//                ruta = ruta + nombre;
+//            } else {
+//                if (nombre.startsWith("/") == false) {
+//                    nombre = "/" + nombre;
+//                }
+//                ruta = ruta + nombre;
+//            }
+//            file = new File(ruta);
+//            resultado = file.getAbsolutePath();
+//        }
+//        return resultado;
+//    }      
 }
