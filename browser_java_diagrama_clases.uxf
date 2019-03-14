@@ -13,7 +13,7 @@
 --
 main
 @Override start
-bg=cyan</panel_attributes>
+bg=orange</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -231,7 +231,7 @@ objeto_de_la_factory</panel_attributes>
       <x>350</x>
       <y>90</y>
       <w>320</w>
-      <h>620</h>
+      <h>630</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 
@@ -239,7 +239,7 @@ objeto_de_la_factory</panel_attributes>
 &lt;&lt;asigna el objeto fabricado&gt;&gt;
 2. Le paso a la factoria 
    el objeto fabricado</panel_attributes>
-    <additional_attributes>100.0;600.0;100.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>100.0;610.0;100.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
