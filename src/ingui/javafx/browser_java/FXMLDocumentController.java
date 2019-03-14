@@ -1,7 +1,5 @@
 package ingui.javafx.browser_java;
 
-import ingui.html.browser_java.IndexControlador;
-import ingui.html.browser_java.Examen_banderas;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -25,13 +23,19 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         boolean ret = true;
         String [] error = { "" };
+        // Recuperar el objeto de la factoria
+        app_browser_java = Factory_app_browser_java.getApp_browser_java();
         WebEngine webEngine = webView.getEngine();
         ret = poner_escuchador_de_url(error);
-        app_browser_java = Factory_app_browser_java.getApp_browser_java();
-        String texto = app_browser_java.iniciar_contenido(this.getClass(), error);
-        if (texto != null) {
-            webEngine.loadContent(texto);    
-        } else {
+        if (ret) {
+            String texto = app_browser_java.iniciar_contenido(this.getClass(), error);
+            if (texto != null) {
+                webEngine.loadContent(texto);    
+            } else {
+                ret = false;
+            }
+        } 
+        if (ret == false) {
             poner_error(error[0]);
         }
     }    
