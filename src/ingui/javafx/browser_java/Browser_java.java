@@ -5,6 +5,7 @@
  */
 package ingui.javafx.browser_java;
 
+import ingui.html.browser_java.Examen_banderas;
 import java.io.InputStream;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
@@ -52,6 +53,8 @@ public class Browser_java extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Examen_banderas examen_bandera = new Examen_banderas(); 
+        Factory_app_browser_java.setApp_browser_java(examen_bandera);
         launch(args);
     }
     

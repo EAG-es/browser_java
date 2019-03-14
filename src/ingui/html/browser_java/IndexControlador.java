@@ -18,21 +18,7 @@ import java.util.Map;
 public class IndexControlador {
     public static int k_nota_un_punto = 1;
     public static double k_nota_penalizacion = 0.5;
-
-    public static String iniciar_contenido(Class clase, String [] error)
-    {
-        String archivo = "/ingui/html/browser_java/recursos/index.html";
-        String texto = null;
-        String ruta = Archivos.leer_ruta_base(clase, error);
-        if (ruta != null) {
-            texto = Archivos.leer_archivo_texto(archivo, error);
-        }
-        if (texto != null) {
-            texto = texto.replaceAll("\\$\\{\\s*browser_java_ruta\\s*\\}", ruta);
-        }
-        return texto;
-    }
-        
+       
     public static String procesar(String url_texto, String[] error) {
         String retorno = null;
         boolean ret = true;

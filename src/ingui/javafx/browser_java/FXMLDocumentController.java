@@ -1,7 +1,7 @@
 package ingui.javafx.browser_java;
 
 import ingui.html.browser_java.IndexControlador;
-import ingui.html.browser_java.IndexControladorChangeListener;
+import ingui.html.browser_java.Examen_banderas;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -19,6 +19,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private WebView webView;
+    public App_browser_java app_browser_java = null;
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -26,7 +27,8 @@ public class FXMLDocumentController implements Initializable {
         String [] error = { "" };
         WebEngine webEngine = webView.getEngine();
         ret = poner_escuchador_de_url(error);
-        String texto = IndexControlador.iniciar_contenido(this.getClass(), error);
+        app_browser_java = Factory_app_browser_java.getApp_browser_java();
+        String texto = app_browser_java.iniciar_contenido(this.getClass(), error);
         if (texto != null) {
             webEngine.loadContent(texto);    
         } else {
@@ -39,10 +41,10 @@ public class FXMLDocumentController implements Initializable {
         boolean ret = true;
         WebEngine webEngine = this.webView.getEngine();
         ReadOnlyStringProperty readOnlyStringProperty = webEngine.locationProperty();
-        IndexControladorChangeListener indexControladorChangeListener
-                = new IndexControladorChangeListener();
-        indexControladorChangeListener.fXMLDocumentController = this;
-        readOnlyStringProperty.addListener(indexControladorChangeListener);
+//        Examen_banderas indexControladorChangeListener
+//                = new Examen_banderas();
+        app_browser_java.setfXMLDocumentController(this);
+        readOnlyStringProperty.addListener(app_browser_java);
         return ret;
     }
 
