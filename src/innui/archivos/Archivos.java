@@ -57,9 +57,9 @@ public class Archivos {
      *     </copy>
      *  </target> 
      * }</pre>
-     * @param nombre
-     * @param error
-     * @return 
+     * @param clase Clase que solicita su ruta base (su directorio base (si es un archivo jar), o la ruta del paquete donde se encuentra (si no es un jar)
+     * @param error Mensaje de error en la posición 0, si lo hay.
+     * @return true si no hay errores, false si hay errores
      */
     public static String leer_ruta_base(Class clase, String [] error)
     {

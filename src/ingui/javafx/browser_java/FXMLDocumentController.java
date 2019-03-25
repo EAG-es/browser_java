@@ -10,18 +10,29 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
 /**
- *
+ * Cklase generada al genera el controlador del archivo FXMLDocument.fxml
  * @author daw
+ * @since 25/marzo/2019
  */
 public class FXMLDocumentController implements Initializable {
-    
+    /**
+     * Atributo que representa un visor HTML de JafaFX.
+     */
     @FXML
     private WebView webView;
+    /**
+     * Receptor de la factoria: Factory_app_browser_java
+     */
     public App_browser_java app_browser_java = null;
     
+    /**
+     * Método llamado mediante la interface Initializable.
+     * @param url URL de inicio
+     * @param resourceBundle Conjunto de recursos disponibles
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        boolean ret = true;
+        boolean ret = true;       
         String [] error = { "" };
         // Recuperar el objeto de la factoria
         app_browser_java = Factory_app_browser_java.getApp_browser_java();
@@ -39,7 +50,11 @@ public class FXMLDocumentController implements Initializable {
             poner_error(error[0]);
         }
     }    
-    
+    /**
+     * Pone el escuchador de cambio de URL en el objeto webView
+     * @param error Mensaje de error en la posición 0.
+     * @return true si todo es correcto, false si hay algún error.
+     */
     public boolean poner_escuchador_de_url(String [] error)
     {
         boolean ret = true;
