@@ -36,7 +36,7 @@ public class Url_operaciones {
                     clave = clave_valor_array[0];
                     valor = "";
                 } else {
-                    error[0] = "Query mal construida. ";
+                    error[0] = java.util.ResourceBundle.getBundle("innui/http/recursos/int").getString("QUERY MAL CONSTRUIDA. ");
                     ret = false;
                     break;
                 }
@@ -49,7 +49,7 @@ public class Url_operaciones {
             if (error[0] == null) {
                 error[0] = "";
             }
-            error[0] = "Error en extraer_parametros_query. " + error[0];
+            error[0] = java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("innui/http/recursos/int").getString("ERROR EN EXTRAER_PARAMETROS_QUERY. {0}"), new Object[] {error[0]});
             ret = false;
         }
         return ret;

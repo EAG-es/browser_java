@@ -41,7 +41,7 @@ public class Archivos {
             if (error[0] == null) {
                 error[0] = "";
             }
-            error[0] = "Error en leer_archivo_texto. " + error[0];
+            error[0] = java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("innui/archivos/recursos/int").getString("ERROR EN LEER_ARCHIVO_TEXTO. {0}"), new Object[] {error[0]});
             resultado = null;
         }
         return resultado;
@@ -96,7 +96,7 @@ public class Archivos {
             if (error[0] == null) {
                 error[0] = "";
             }
-            error[0] = "Error en leer_archivo_texto. " + error[0];
+            error[0] = java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("innui/archivos/recursos/int").getString("ERROR EN LEER_ARCHIVO_TEXTO. {0}"), new Object[] {error[0]});
             resultado = null;
         }
         return resultado;
